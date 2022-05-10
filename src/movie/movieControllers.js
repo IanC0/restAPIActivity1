@@ -20,10 +20,19 @@ exports.listMovies = async (req, res) => {
     }
 }
 
+exports.updateMovies = async (req, res) => {
+    try {
+        await Movie.updateOne({title: req.body.title},{title: req.body.newTitle, actors: req.body.newActors});
+        res.status(200).send(await Movie.find({}))
+    } catch (error) {
+        console.log(error);
+        res.status(500).send({ error: error.message });
+    }
+}
 
 exports.deleteMovie = async (req, res) => {
     try {
-        const movieDel = await Movie.deleteOne({ where: {title: req.title}});
+        await Movie.deleteOne({ where: {title: req.title}});
         res.status(200).send("Delete request made")
     } catch (error) {
         console.log(error)
