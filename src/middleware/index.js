@@ -21,16 +21,12 @@ exports.hashCheck = async (req, res, next) => {
     }
 }
 
-// exports.hashCheck = async (req, res, next) => {
-//     try {
-//         let userTemp = await User.find({where: {username: req.body.username}});
-//         console.log(userTemp)
-//         if (await bcrypt.hash(req.body.pass, 8) == userTemp.pass) {
-//         res.status(200).send("authentication passed!")
-//         next();
-//         } 
-//     } catch (error) {
-//         console.log(error);
-//         res.status(500).send({ error: error.message })
-//     }
-// }
+exports.emailCheck = async (req, res, next) => {
+    try {
+        /.+\@.+\..+/.test(req.body.email) ? 
+            next() :
+            res.status(500).send("email not valid")
+    } catch (error) {
+        res.status(500).send({ error: error.message })
+    }
+}
