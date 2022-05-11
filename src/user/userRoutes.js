@@ -1,7 +1,8 @@
 const { Router } = require("express");
 const { addUser, listUsers, updateUser, deleteUser } = require("./userControllers");
-const { hashPass } = require("../middleware");
+const { hashPass, hashCheck } = require("../middleware");
 const userRouter = Router();
+
 
 userRouter.post("/user", hashPass, addUser);
 userRouter.get("/user", listUsers);

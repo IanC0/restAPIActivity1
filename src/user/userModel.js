@@ -15,6 +15,10 @@ const userSchema = new mongoose.Schema({
     pass: {
         type: String,
         required: true
+    },
+    access: {
+        type: String,
+        match: /^(admin|user)$/
     }
 });
 
