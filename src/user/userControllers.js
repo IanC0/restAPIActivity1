@@ -46,11 +46,9 @@ exports.updateUser = async (req, res) => {
         res.status(500).send({ error: error.message })
     }
 }
-
    
 exports.deleteUser = async (req, res) => {
     try {
-        let tempVar = await User.find({username: req.body.username})
         await User.deleteOne({username: req.body.username})        
         res.status(200).send("account deleted")
     } catch (error) {

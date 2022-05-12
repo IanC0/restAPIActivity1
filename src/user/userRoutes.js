@@ -6,6 +6,8 @@ const userRouter = Router();
 
 userRouter.post("/user", emailCheck, hashPass, addUser);
 userRouter.get("/user", hashPassCheck, listUsers);
-userRouter.put("/user", hashPassCheck, hashUpdatedPass, newEmailCheck, updateUser);
+userRouter.put("/user",  hashUpdatedPass, hashPassCheck, newEmailCheck, updateUser);
 userRouter.delete("/user", hashPassCheck, deleteUser);
 module.exports = userRouter;
+
+//

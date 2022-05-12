@@ -32,10 +32,10 @@ exports.updateMovies = async (req, res) => {
 
 exports.deleteMovie = async (req, res) => {
     try {
-        await Movie.deleteOne({ where: {title: req.title}});
-        res.status(200).send("Delete request made")
+        await Movie.deleteOne({title: req.body.title});
+        res.status(200).send("Delete request made");
     } catch (error) {
         console.log(error)
-        res.status(500).send({error: error.message})
+        res.status(500).send({error: error.message});
     }
 }
