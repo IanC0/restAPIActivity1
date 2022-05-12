@@ -1,4 +1,5 @@
-# restAPIActivity1
+# restAPIActivity1 - might be best to view ReadMe in Visual Studio Code as JSON objects in github's browser are appearing on one line. 
+
 
 2 Databases (Movie and User)
 
@@ -10,8 +11,9 @@ PUT:
  -  add a movie
  - input as an object:
 { 
-    "title": "Pulp Fiction"    <--- String
-    "actors: ["actor 1", "actor 2"]   <--- List actors as strings in an array>
+    "title": "Pulp Fiction"    <--- String;
+    "actors: ["actor 1", "actor 2"]   <--- List actors as strings in an array;
+
 }
 
 PUT: 
@@ -21,8 +23,8 @@ PUT:
  - example:
  {
      "title": "Pulp Fction",
-     "newTitle": "Pulp Fiction",    //replaces existing movie title
-     "newActors": ["Samuel L Jackson","Bruce Willis"]    // replaces existing actors array 
+     "newTitle": "Pulp Fiction",//replaces existing movie title
+     "newActors": ["Samuel L Jackson","Bruce Willis"]// replaces existing actors array 
  }
 
  DELETE: 
